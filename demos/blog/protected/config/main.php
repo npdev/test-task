@@ -11,7 +11,7 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log'),
-				'modules'=>array('chat'),
+	'modules'=>array('chat'),
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -49,6 +49,7 @@ return array(
         		'post/<id:\d+>/<title:.*?>'=>'post/view',
         		'posts/<tag:.*?>'=>'post/index',
         		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+        		'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
         	),
         ),
 		'log'=>array(

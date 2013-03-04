@@ -1,17 +1,19 @@
 <div id="chat_window">
 				CHAT WINDOW
 				
-				<?php $form=$this->beginWidget('CActiveForm', array('action'=>'chat')); ?>
+				<?php echo CHtml::form('chat/chat/sendMessage', 'post'); ?>
+				<?php echo CHtml::textArea('output', '', array('id'=>'output', 'cols'=>32, 'rows'=>6, 'disabled'=>'disabled' ,'style'=>'resize:none')) ?>
 
-				<?php echo $form->errorSummary($model); ?>
+				<?php echo CHtml::activeTextArea($model, 'text', array('id'=>'text', 'cols'=>32, 'maxlength'=>100, 'style'=>'resize:none')) ?>
 
-				<div class="row submit">
-								<?php echo $form->label($model,'Enter your message: '); ?>
-								<?php echo $form->textArea($model,'text', array('cols'=>32, 'rows'=>2, 'maxlength'=>100, 'style'=>'resize:none')) ?>
-				</div>
-				<div class="row submit">
-								<?php echo CHtml::ajaxSubmitButton('Send', 'chat'); ?>
-				</div>
+				<?php echo CHtml::ajaxSubmitButton('Send', 'chat/chat/sendMessage', array(
+								'dataType'=>'json',
+								'type'=>'post',
+								'data'=>array('message'=> "js:$('#text').val()"),
+								'success'=>"js: function(data){
+																$('#output').append(data.message);
+												}"
+				)); ?>
 
-				<?php $this->endWidget(); ?>
+				<?php echo CHtml::endForm(); ?>
 </div>

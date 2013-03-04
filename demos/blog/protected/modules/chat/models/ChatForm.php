@@ -2,6 +2,7 @@
 class ChatForm extends CFormModel
 {
 				public $text;
+				public $output;
 				
 				public function rules(){
 								return array(
