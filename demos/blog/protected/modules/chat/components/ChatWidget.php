@@ -4,10 +4,9 @@ class ChatWidget extends CWidget{
 				public function init()	{
 								$baseUrl = Yii::app()->baseUrl;
 								$cs = Yii::app()->getClientScript();
-								$assetsPath = Yii::app()->getAssetManager()->publish(dirname(__FILE__).'/../'.DIRECTORY_SEPARATOR.'assets', true);
+								$assetsPath = Yii::app()->getAssetManager()->publish(dirname(__FILE__).'/../'.DIRECTORY_SEPARATOR.'assets');
 								$cs->registerCssFile($assetsPath.'/css/chat.css');
-								$cs->registerScriptFile($assetsPath.'/js/jquery.js');
-								$cs->registerScriptFile($assetsPath.'/js/jquery.form.js');
+								$cs->registerScriptFile($assetsPath.'/js/chat.js');
 				}
 				
 				public function run()	{

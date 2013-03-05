@@ -11,7 +11,13 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log'),
-	'modules'=>array('chat'),
+	'modules'=>array(
+					'chat',
+								'gii'=>array(
+												'class'=>'system.gii.GiiModule',
+												'password'=>'1111',
+								),
+	),
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',

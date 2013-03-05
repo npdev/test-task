@@ -1,1 +1,27 @@
-#chat_window {width: 200px; height: 200px; position: relative; right: 0px; z-index: 100;}
+#chat_window {
+				background-color: #DDD;
+				height: 348px;
+				overflow: hidden;
+				position: fixed;
+				right: 200px;
+				top: 120px;
+				width: 463px;
+				z-index: 100;
+}
+#chat_window #toggle{
+				background-color: #DDD;
+				float: left;
+				height: 100%;
+				line-height: 300px;
+				width: 20px;
+}
+#chat_window #toggle:hover{
+				cursor: pointer;
+}
+#chat_window #chat_form{
+				float: right;
+				width: 443px;
+}
+#chat_window input[type='submit']{
+				float: right;
+}
