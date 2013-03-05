@@ -71,7 +71,6 @@ class Messages extends CActiveRecord
 								$messages->user = $user;
 								$messages->text = $text;
 								$messages->date = date('Y-m-d H:i:s');
-								//var_dump($message->date, $message->save()); die();
 								if(!$messages->save()){
 												return array('error'=>'Error: database request fail');
 								}
@@ -86,9 +85,6 @@ class Messages extends CActiveRecord
 												'order'=>$TMessages . ".id desc",
 												'limit'=>15
 								));
-								
-							//	var_dump($result);
-							//	die();
 								return $result;
 								
 				}

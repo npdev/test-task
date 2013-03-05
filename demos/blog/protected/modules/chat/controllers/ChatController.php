@@ -19,18 +19,14 @@ class ChatController extends Controller
 												foreach	(array('date','user','text') as $field){
 																$output[$key][$field] = $result[$len -1 - $key][$field];
 												}
-												//$output[$key] = implode('\\n', $output[$key]);
 								}
-							//var_dump($len, $output); die();
-						//		$output = implode('|||',	$output);
 								echo CJSON::encode(array(
 												"output" => $output,
 								));
 				}
 
 				public function actionSendMessage(){
-								//var_dump(Yii::app()->getRequest());die();
-								$request = Yii::app()->request;//->getPost('text');
+								$request = Yii::app()->request;
 								if(!$request->isAjaxRequest){
 												throw new CHttpException(404);
 								}
